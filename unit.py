@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-
+import random
 
 class Unit(metaclass=ABCMeta):
     @abstractmethod
@@ -38,6 +38,13 @@ class Unit(metaclass=ABCMeta):
         pass
 
 
+class Soldier(Unit):
+    def __init__(self, clock):
+        self.recharge = random.randrange(500, 2000)
+        self._clock = clock
+        self.next_time_attack = self._clock.time + self.recharge
 
+    def attack(self, target):
+        pass
 
-
+    # attack koef * damage =
