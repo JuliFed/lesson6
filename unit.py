@@ -28,15 +28,15 @@ class Unit(metaclass=ABCMeta):
     @property
     @abstractmethod
     def recharge(self):
-        # возвращает количество ходов при атаке которые будем простаивать
+        # добавить глобальный clock по которому следить за recharge!!!!!!!!!!!!!!!
+        # каждый attack() мы устанавливаем next_attack = clock.time + recharge
         pass
 
-    # @abstractmethod
-    # def tick(self):
-    #     # уменьшает recharge для юнитов каждый ход
-    #     pass
+    @property
+    @abstractmethod
+    def members(self):
+        pass
 
-    # добавить глобальный clock по которому следить за recharge!!!!!!!!!!!!!!!
 
 
 
